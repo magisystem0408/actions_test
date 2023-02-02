@@ -1,0 +1,17 @@
+name: Deploy to image ECR
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    working-directory: migration/jam-roll
+    steps:
+      - uses: ./.github/composite/action
+        with:
+          name: 'AY'
+
+
